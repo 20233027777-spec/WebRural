@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+html, body { height: 100%; }
+
+/* Body */
+body {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+/* Imagem de fundo */
+#imgfundo {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header - mantém o seu layout no desktop */
+#logoPags {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;     /* menu colado no topo */
+    padding: 8px 16px 0;
+    gap: 8px;
+}
+
+#imglogo {
+    width: clamp(80px, 12vw, 120px);
+    height: auto;
+    margin: 6px 12px 0 6px;
+}
+
+#pags {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-right: 12px;
+}
+
+#pagsEs {
+    display: flex;
+    gap: 30px;
+}
+
+.btn {
+    color: white;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-family: "Roboto", sans-serif;
+    font-weight: 200;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    line-height: 1;             
+}
+.btn:hover {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+/* Login e Registrar */
+#logCad {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#log, #cad {
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#log { 
+    background-color: rgba(255, 255, 255, 0.5); 
+    color: black; 
+    border: 0.5px solid rgba(0, 0, 0, 0.9); 
+    box-sizing: border-box;
+}
+#cad { 
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+}
+
+#log:hover, #cad:hover { opacity: 0.8; transform: scale(1.05); }
+
+/* Hero */
+.divH2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: rgba(73, 106, 2, 1);
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    line-height: 1.2;
+    max-width: 60%;
+    margin-top: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 980px) {
+    #pags { gap: 16px; }
+    #pagsEs { gap: 20px; }
+    h2 { max-width: 80%; }
+}
+
+@media (max-width: 720px) {
+    #logoPags {
+        row-gap: 6px;
+    }
+    #pags {
+        width: 100%;
+        margin-right: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end; 
+        gap: 8px 18px;
+        padding-top: 10px;
+    }
+
+    #pagsEs,
+    #logCad {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; 
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    #pagsEs .btn { font-size: clamp(.95rem, 3.8vw, 1.2rem); }
+    #log, #cad { font-size: 13px; padding: 7px 12px; }
+
+    .divH2 { padding-top: 100px; }
+}
+
+@media (max-width: 420px) {
+    #imglogo { width: clamp(70px, 22vw, 90px); margin: 4px 8px 0 6px; }
+    #pagsEs { gap: 10px; }
+    #pagsEs .btn { font-size: clamp(.9rem, 4.2vw, 1.05rem); }
+    #log, #cad { font-size: 12px; padding: 6px 10px; }
+
+    h2 { max-width: 90%; font-size: clamp(.95rem, 3.8vw, 1.2rem); }
+}

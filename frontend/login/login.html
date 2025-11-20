@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="edtLogo">
+    <img src="../images/fundo.png" id="imgfundo" alt="Imagem de fundo">
+    <img src="../images/logo3.png" id="imglogo" alt="Logo">
+  </div>
+
+  <div class="central">
+    <div class="caixalogin">
+      <!-- seta -->
+      <a href="../pagina_inicial/index.html">
+        <img src="../images/seta.png" alt="Seta" id="seta">
+      </a>
+
+      <div class="praCima">
+        <img src="../images/pessoa1.png" id="imgpessoa" alt="Imagem pessoa login">
+        <h1>Login</h1>
+
+        <form onsubmit="event.preventDefault(); fazerLogin();">
+          <div class="subconteiner">
+            <img src="../images/pessoa2.png" alt="ícone usuário" class="icone">
+            <input type="email" id="email" class="emailsenha" placeholder="E-mail" required>
+          </div>
+
+          <div class="subconteiner">
+            <img src="../images/cadeado.png" alt="Ícone Senha" class="icone">
+            <input type="password" id="senha" class="emailsenha" placeholder="Senha" minlength="8" required>
+          </div>
+
+          <button type="submit" id="acessar" class="sla">Acessar</button>
+        </form>
+
+        <a href="../cadastro/cadastro.html">
+          <button type="button" id="criarConta" class="sla">Criar minha conta</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../globais/transitions.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Atividades</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="grande">
+        <div id="media">
+            <div class="topo-menu">
+                <img src="../images/logo3.png" alt="logo" id="logo">
+                <button id="menu-toggle" aria-label="Abrir menu">☰</button>
+            </div>
+
+            <button onclick="location.href='../perfil/perfil.html'" class="perfil" aria-label="Perfil">
+                <img src="../images/pessoaVerdePerfil.png" alt="imagem pessoa" class="icon" id="pessoa">
+                <span class="label">Perfil</span>
+            </button>
+
+            <div id="botoes-baixo">
+                <button onclick="location.href='../talhoes/talhoes.html'" class="pequena"  aria-label="Talhões">
+                    <img src="../images/talhoes.png" alt="imagem talhões" class="icon">
+                    <span class="label">Talhões</span>
+                </button>
+
+                <button class="pequena ativo" aria-label="Atividades">
+                    <img src="../images/atividades.png" alt="imagem atividades" class="icon">
+                    <span class="label">Atividades</span>
+                </button>
+
+                <button onclick="location.href='../despesasReceitas/despesasReceitas.html'" class="pequena" aria-label="Despesas e Receitas">
+                    <img src="../images/despesasReceitas.png" alt="imagem despesas e receitas" class="icon">
+                    <span class="label">Despesas e receitas</span>
+                </button>
+
+                <button onclick="location.href='../relatorios/relatorios.html'" class="pequena" aria-label="Relatórios">
+                    <img src="../images/relatorios.png" alt="imagem relatórios" class="icon">
+                    <span class="label">Relatórios</span>
+                </button>
+
+                <button id="sairConta" class="pequena" aria-label="Sair">
+                    <img src="../images/sair.png" alt="imagem sair" class="icon">
+                    <span class="label">Sair</span>
+                </button>
+            </div>
+        </div>
+        <div id="direita"> 
+            <h1>Minhas Atividades</h1> 
+            <button id="abrirModal">Adicionar Atividade</button>
+
+            <div id="modal" class="fundo-modal">
+                <div class="caixa-modal"> 
+                    <h2>Adicionar Atividade</h2>
+                    <form id="formAtividade">
+                        <label>Nome:</label>
+                        <input type="text" id="nomeAtv" required>
+                        <label>Data da atividade:</label>
+                        <input type="date" id="dataAtv" required>
+                        <label>Descrição:</label>
+                        <textarea id="descricaoAtv" rows="4" style="resize:none;"></textarea>
+                        <label for="minhaLista">Talhão pertencente:</label>
+                        <select id="selectTalhao" required>
+                            <option value="">-- Selecione um talhão --</option>
+                        </select>
+                    </form>
+                    <div class="botoes">
+                        <button id="fecharModal">Cancelar</button>
+                        <button type="submit" form="formAtividade">Cadastrar Atividade</button>
+                    </div>
+                </div>
+            </div>
+            <div id="tabela">
+                <table id="tabelaAtividades">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Talhão Pertencente</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultado">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="modalConfirmar" class="modal">
+        <div class="modalConteudo">
+            <h2>Atenção!</h2>
+            <p>
+                Você tem certeza que deseja excluir essa atividade?
+
+                <br><br><strong>Essa ação não pode ser desfeita.</strong>
+            </p>
+            <div class="botoes">
+            <button id="btnCancelarExcluir">Cancelar</button>
+            <button type="submit" id="btnConfirmarExcluir">Confirmar Exclusão</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('media');
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('ativo');
+        });
+    </script>
+
+    <script src="./script.js"></script>
+</body>
+</html>

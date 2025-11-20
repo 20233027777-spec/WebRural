@@ -1,0 +1,310 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(55, 157, 87, 1);
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* CONTAINER PRINCIPAL */
+#grande {
+    display: flex;
+    height: 90vh;
+    width: 80vw;
+    max-width: 1400px;
+    background-color: rgba(244, 233, 214, 1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+#media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18vw;
+    min-width: 220px;
+    background-color: rgba(55, 157, 87, 1);
+    border-radius: 15px 0 0 15px;
+    box-shadow: inset -1px 0 5px rgba(0,0,0,0.1);
+    padding-top: 2vh;
+    transition: 0.3s;
+}
+
+/* LOGO */
+#logo {
+    width: 10vw;
+    height: auto;
+    margin-bottom: 2vh;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+}
+.icon {
+    width: 2vw;
+    height: auto;
+}
+.label {
+    padding-right: 23px;
+}
+/* BOTÃO PERFIL */
+.perfil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    width: 55%;
+    padding: 8px;
+    background-color: rgba(53, 123, 66, 1);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 1.5vh 0 4vh 0;
+    border-right: 0px;
+}
+.perfil:hover {
+    background-color: rgba(76, 175, 80, 0.6);
+    transform: scale(1.05);
+}
+
+/* MENU LATERAL */
+#botoes-baixo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.pequena {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    width: 90%;
+    padding: 15px;
+    margin: 2.5px 0;
+    background-color: rgba(55, 157, 87, 1);
+    border: none;
+    border-radius: 15px 0 0 15px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    justify-content: flex-start;
+}
+
+.pequena:hover {
+    background-color: rgba(51, 130, 76, 0.6);
+    transform: translateX(-3px);
+}
+
+.pequena.ativo {
+    background-color: rgba(51, 130, 76, 1);
+}
+
+/* ÍCONES */
+.icon {
+    width: 2vw;
+    height: auto;
+}
+
+/* CONTEÚDO DIREITO */
+#direita {
+    flex: 1;
+    padding: 2rem;
+}
+
+#direita h1 {
+    color: rgba(55, 157, 87, 1);
+}
+
+/* MENU MOBILE */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.topo-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+#orgGrande{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#orgMenor {
+    flex-direction: column;
+}
+#caixaBotao{
+    display: flex;
+    align-items: center;
+}
+#btnRelat{
+    background-color: rgba(55, 157, 87, 1);
+    border: none;
+    cursor: pointer;
+    height: 7vh;
+    width: 15vw;
+    font-size: 20px;
+    color: white;
+    box-shadow: -1px 0 5px rgba(0,0,0,0.4);
+    border-radius: 5px;
+}
+#btnRelat:hover{
+    background-color: rgb(49, 141, 78);
+    transform: scale(1.02);
+}
+/* Select minimalista */
+select {
+    width: 260px;
+    padding: 10px 14px;
+    border: 1.8px solid #3b7d3b;    /* verde mais elegante */
+    border-radius: 12px;
+    background: #fff;
+    color: #2e3a2e;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Hover */
+select:hover {
+    border-color: #4a9b4a;
+}
+
+/* Quando clica */
+select:focus {
+    border-color: #356c35;
+    box-shadow: 0 0 6px rgba(76, 175, 80, 0.35);
+}
+
+
+
+/* ==============================================================
+                      RESPONSIVIDADE 
+   ============================================================== */
+
+@media (max-width: 1000px) {
+    #btnRelat{
+        height: 7vh;
+        width: 20vw;
+        font-size: 15px;
+        border-radius: 5px;
+    }
+    body {
+        align-items: flex-start;
+        padding-top: 15px;
+    }
+    #direita{
+        height: auto;
+    }
+    #grande {
+        flex-direction: column;
+        width: 95%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    #media {
+        width: 100%;
+        min-width: unset;
+        border-radius: 0;
+        padding: 10px 0;
+    }
+
+    .topo-menu {
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    #logo {
+        width: 120px;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    /* Botão perfil adaptado */
+    .perfil {
+        width: 60%;
+        max-width: 240px;
+        padding: 10px 0;
+        font-size: 0.9rem;
+        border-radius: 25px;
+        margin: 15px auto;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .perfil .icon {
+        width: 22px;
+    }
+
+    /* Menu escondido até abrir */
+    #botoes-baixo {
+        display: none;
+        align-items: center;
+    }
+
+    #media.ativo #botoes-baixo {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .pequena {
+        width: 85%;
+        font-size: 0.9rem;
+        border-radius: 10px;
+        gap: 12px;
+    }
+
+    .icon {
+        width: 24px;
+    }
+
+    /* Conteúdo de dentro */
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .acoes {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* Smartphones muito pequenos */
+@media (max-width: 480px) {
+    #logo {
+        width: 95px;
+    }
+
+    .perfil {
+        width: 70%;
+        font-size: 0.85rem;
+    }
+
+    .pequena {
+        width: 90%;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios Detalhados</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="grande">
+        <div id="media">
+            <div class="topo-menu">
+                <img src="../images/logo3.png" alt="logo" id="logo">
+                <button id="menu-toggle" aria-label="Abrir menu">☰</button>
+            </div>
+
+            <button onclick="location.href='../perfil/perfil.html'" class="perfil"><img src="../images/pessoaVerdePerfil.png" class="icon"><span class="label">Perfil</span></button>
+
+            <div id="botoes-baixo">
+                <button onclick="location.href='../talhoes/talhoes.html'" class="pequena"><img src="../images/talhoes.png" class="icon"><span class="label">Talhões</span></button>
+                <button onclick="location.href='../minhasAtividades/minhasAtividades.html'" class="pequena"><img src="../images/atividades.png" class="icon"><span class="label">Atividades</span></button>
+                <button onclick="location.href='../despesasReceitas/despesasReceitas.html'" class="pequena"><img src="../images/despesasReceitas.png" class="icon"><span class="label">Despesas e receitas</span></button>
+                <button class="pequena ativo"><img src="../images/relatorios.png" class="icon"><span class="label">Relatórios</span></button>
+                <button id="sairConta" class="pequena"><img src="../images/sair.png" class="icon"><span class="label">Sair</span></button>
+            </div>
+        </div>
+
+        <div id="direita"> 
+            <div id="orgGrande">
+                <div id="orgMenor">
+                    <h1>Meu Relatório Detalhado</h1>
+                    <h3>Escolha o talhão desejado para filtrar:</h3>
+
+                    <select id="selectTalhao" required>
+                        <option value="0">-- Geral --</option>
+                    </select>
+                </div>
+
+                <div id="caixaBotao">
+                    <button onclick="location.href='../relatorios/relatorios.html'" id="btnRelat">Meus Gráficos</button>
+                    <button id="btnExport" style="margin-left:10px;">Exportar / Imprimir</button>
+                </div>
+            </div>
+
+            <div id="conteudoRelatorio">
+
+                <!-- TABELA 1: ATIVIDADES -->
+                 <div class="tabelaResponsiva">
+                <h2>Atividades</h2>
+                <table id="tabelaAtividades">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Talhão</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyAtividades">
+                        <tr><td colspan="4" style="text-align:center;">Carregando...</td></tr>
+                    </tbody>
+                </table>
+                 </div>
+
+                <!-- TABELA 2: DESPESAS E RECEITAS -->
+                <div class="tabelaResponsiva">
+                    <h2 style="margin-top: 40px;">Despesas e Receitas</h2>
+                    <table id="tabelaFinanceiro">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Nome</th>
+                                <th>Data</th>
+                                <th>Valor (R$)</th>
+                                <th>Talhão</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyFinanceiro">
+                            <tr><td colspan="5" style="text-align:center;">Carregando...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- NOVA TABELA: RESUMO FINANCEIRO MENSAL -->
+                <div class="tabelaResponsiva">
+                <h2 style="margin-top: 40px;">Resumo Financeiro Mensal</h2>
+                <table id="tabelaMensal">
+                    <thead>
+                        <tr>
+                            <th>Mês</th>
+                            <th>Total Despesas (R$)</th>
+                            <th>Total Receitas (R$)</th>
+                            <th>Lucro Líquido (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodyMensal">
+                        <tr><td colspan="4" style="text-align:center;">Carregando...</td></tr>
+                    </tbody>
+                </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('media');
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('ativo');
+        });
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>

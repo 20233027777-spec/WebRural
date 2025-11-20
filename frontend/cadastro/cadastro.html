@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro - WebRural</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <img src="../images/fundo.png" alt="Campo agrícola" class="background-img">
+    <img src="../images/logo3.png" alt="Logo WebRural" class="logo">
+    <div class="form-side">
+
+      <div class="form-container">
+        <img src="../images/pessoa1.png" alt="Ícone de pessoa" class="user-icon">
+        <h2>Cadastro</h2>
+        <form onsubmit="cadastrarUsuario(event)">
+          <div class="input-group">
+            <i class="fa-regular fa-id-card"></i>
+            <input type="text" placeholder="Nome completo" id="nome" required >
+          </div>
+          <div class="input-group">
+            <i class="fa-regular fa-user"></i>
+            <input type="email" placeholder="E-mail" id="email" required>
+          </div>
+          <div class="input-group">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Senha" id="senha" required>
+          </div>
+          <div class="input-group">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Confirme sua senha" id="confirmarSenha" required >
+          </div>
+
+          <button type="submit" class="btn criar" onclick="cadastrarUsuario()">Criar Conta</button>
+          <a href="../login/login.html">
+            <button type="button" class="btn entrar">Já tenho uma conta</button>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

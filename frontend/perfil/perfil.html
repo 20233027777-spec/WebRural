@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="grande">
+        <div id="media">
+            <div class="topo-menu">
+                <img src="../images/logo3.png" alt="logo" id="logo">
+                <button id="menu-toggle" aria-label="Abrir menu">☰</button>
+            </div>
+
+            <div id="botoes-baixo">
+                <button onclick="location.href='../talhoes/talhoes.html'" class="pequena" aria-label="Talhões">
+                    <img src="../images/talhoes.png" alt="imagem talhões" class="icon">
+                    <span class="label">Talhões</span>
+                </button>
+
+                <button onclick="location.href='../minhasAtividades/minhasAtividades.html'" class="pequena" aria-label="Atividades">
+                    <img src="../images/atividades.png" alt="imagem atividades" class="icon">
+                    <span class="label">Atividades</span>
+                </button>
+
+                <button onclick="location.href='../despesasReceitas/despesasReceitas.html'" class="pequena" aria-label="Despesas e Receitas">
+                    <img src="../images/despesasReceitas.png" alt="imagem despesas e receitas" class="icon">
+                    <span class="label">Despesas e receitas</span>
+                </button>
+
+                <button onclick="location.href='../relatorios/relatorios.html'" class="pequena" aria-label="Relatórios">
+                    <img src="../images/relatorios.png" alt="imagem relatórios" class="icon">
+                    <span class="label">Relatórios</span>
+                </button>
+
+                <button onclick="location.href='../pagina_inicial/index.html'" class="pequena" aria-label="Sair">
+                    <img src="../images/sair.png" alt="imagem sair" class="icon">
+                    <span class="label">Sair</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="direita"> 
+            <div id="perfilzao">
+                <h1 class="tituloPerfil">Meu Perfil</h1>
+
+                <div id="caixinhaFoto">
+                    <img src="../images/pessoa1.png" alt="Foto de perfil" id="imgPerfil">
+                </div>
+
+                <div id="textinhosPerfil">
+                    <h1 id="saudacao">Olá!</h1>
+                    <p id="emailInfo" class="emailzinho">Seu email é:</p>
+                </div>
+                <button id="excluirConta">Excluir conta</button>
+            </div>
+        </div>
+    </div>
+    <div id="modalConfirmar" class="modal">
+        <div class="modalConteudo">
+            <h2>Atenção!</h2>
+            <p>
+                Ao excluir sua conta você não poderá recuperar:<br>
+                <br>• Todos os seus talhões cadastrados
+                <br>• Todas as receitas cadastradas
+                <br>• Todas as despesas cadastradas
+                <br>• Todas as atividades cadastradas <br>
+                <br>Você tem certeza que deseja excluir sua conta?
+
+                <br><br><strong>Essa ação não pode ser desfeita.</strong>
+            </p>
+            <div class="botoes">
+                <button id="btnCancelarExcluir">Cancelar</button>
+                <button type="submit" id="btnConfirmarExcluir">Confirmar Exclusão</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('media');
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('ativo');
+        });
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>

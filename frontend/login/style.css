@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: opacity 0.5s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+/* ===== Fundo ===== */
+#imgfundo {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===== Logo ===== */
+#edtLogo{
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  overflow: hidden;
+}
+#imglogo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: clamp(80px, 12vw, 120px);
+  height: auto;
+  z-index: 10;}
+
+/* ===== Caixa Central ===== */
+.central {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 1rem;
+}
+
+.caixalogin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 360px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Ícones ===== */
+#seta {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 28px;
+  height: auto;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+
+#seta:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Imagem do Usuário ===== */
+#imgpessoa {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+/* ===== Título ===== */
+h1 {
+  margin-top: 40px;
+  font-weight: 500;
+  font-size: clamp(22px, 5vw, 38px);
+  letter-spacing: 1px;
+}
+
+/* ===== Inputs ===== */
+.subconteiner {
+  position: relative;
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.subconteiner img {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 12px 12px 44px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: rgba(125, 154, 125, 0.7);
+  color: white;
+  font-size: clamp(14px, 2.4vw, 18px);
+  outline: none;
+}
+
+input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+/* ===== Botões ===== */
+#acessar, #criarConta {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: clamp(14px, 2.4vw, 18px);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#acessar {
+  background-color: rgb(1, 104, 2);
+}
+
+#acessar:hover {
+  background-color: rgb(1, 82, 2);
+  transform: scale(1.01);
+}
+
+#criarConta {
+  background-color: rgba(125, 154, 125, 0.5);
+  border: 1px solid #ddd;
+}
+
+#criarConta:hover {
+  opacity: 0.8;
+  transform: scale(1.01);
+}
+
+.praCima {
+  width: 100%;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  #imglogo {
+    width: 100px;
+  }
+
+  .caixalogin {
+    max-width: 320px;
+    padding: 1.5rem;
+  }
+
+  #imgpessoa {
+    width: 90px;
+    height: 90px;
+    top: -35px;
+  }
+
+  h1 {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .caixalogin {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 50px;
+    margin-top: 35px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+  #seta {
+    width: 22px;
+  }
+}

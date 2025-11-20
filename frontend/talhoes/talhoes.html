@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Talhões - WebRural</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="grande">
+        <div id="media">
+            <div class="topo-menu">
+                <img src="../images/logo3.png" alt="logo" id="logo">
+                <button id="menu-toggle" aria-label="Abrir menu">☰</button>
+            </div>
+
+            <button onclick="location.href='../perfil/perfil.html'" class="perfil" aria-label="Perfil">
+                <img src="../images/pessoaVerdePerfil.png" alt="imagem pessoa" class="icon" id="pessoa">
+                <span class="label">Perfil</span>
+            </button>
+
+            <div id="botoes-baixo">
+                <button class="pequena ativo"><img src="../images/talhoes.png" class="icon"><span class="label">Talhões</span></button>
+                <button onclick="location.href='../minhasAtividades/minhasAtividades.html'" class="pequena"><img src="../images/atividades.png" class="icon"><span class="label">Atividades</span></button>
+                <button onclick="location.href='../despesasReceitas/despesasReceitas.html'" class="pequena"><img src="../images/despesasReceitas.png" class="icon"><span class="label">Despesas e receitas</span></button>
+                <button onclick="location.href='../relatorios/relatorios.html'" class="pequena"><img src="../images/relatorios.png" class="icon"><span class="label">Relatórios</span></button>
+                <button id="sairConta" class="pequena"><img src="../images/sair.png" class="icon"><span class="label">Sair</span></button>
+            </div>
+        </div>
+
+        <div id="direita"> 
+            <h1>Meus talhões</h1> 
+            <button id="abrirModal" class="btn-add">Adicionar talhão</button>
+
+            <div id="modal" class="fundo-modal">
+                <div class="caixa-modal"> 
+                    <h2>Adicionar Talhão</h2>
+                    <form id="formTalhao">
+                        <label>Nome:</label>
+                        <input type="text" name="nome" id="nome" maxlength="45" required>
+
+                        <label>Tamanho (ha):</label>
+                        <input type="number" name="area" step="0.01" id="area" required>
+
+                        <label>Descrição:</label>
+                        <textarea name="descricao" rows="4" style="resize:none;" id="descricao"></textarea>
+                    </form>
+                    <div class="botoes">
+                        <button id="fecharModal">Cancelar</button>
+                        <button type="submit" form="formTalhao">Cadastrar Talhão</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tabela">
+                <table id="tabelaTalhoes">
+                    <thead>
+                        <tr>
+                            <th>Talhão</th>
+                            <th>Tamanho(ha)</th>
+                            <th>Descrição</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultado">
+                    </tbody>
+                </table>
+            </div>
+            <div id="modalEdicao" class="fundo-modal">
+                <div class="caixa-modal"> 
+                    <h2>Editar Talhão</h2>
+                    <form id="formEdicaoTalhao">
+                    <label>Nome:</label>
+                    <input type="text" name="nome" id="nomeEdt" required>
+
+                    <label>Tamanho (ha):</label>
+                    <input type="number" name="area" step="0.01" id="areaEdt" required>
+
+                    <label>Descrição:</label>
+                    <textarea name="descricao" rows="4" style="resize:none;" id="descricaoEdt"></textarea>
+                    </form>
+                    <div class="botoes">
+                    <button id="fecharModalEdt">Cancelar</button>
+                    <button type="submit" form="formEdicaoTalhao">Salvar Alterações</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="modalConfirmar" class="modal">
+        <div class="modalConteudo">
+            <h2>Atenção!</h2>
+            <p>
+                Ao excluir este talhão você também excluirá:
+                <br>• Todas as despesas relacionadas
+                <br>• Todas as receitas relacionadas
+                <br>• Todas as atividades relacionadas
+                <br><br><strong>Essa ação não pode ser desfeita.</strong>
+            </p>
+            <div class="botoes">
+            <button id="btnCancelarExcluir">Cancelar</button>
+            <button type="submit" id="btnConfirmarExcluir">Confirmar Exclusão</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('media');
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('ativo');
+        });
+    </script>
+
+    <script src="./script.js"></script>
+</body>
+</html>
